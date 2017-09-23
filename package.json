@@ -1,0 +1,16 @@
+{
+  "name": "Chirper",
+  "version": "1.0.0",
+  "main": "server/index.js",
+  "scripts": {
+    "test": "mocha server/serverTests"
+  },
+  "author": "Platypi",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "mocha": "^1.21.4",
+    "request": "^2.34.0",
+    "chai": "^1.9.0"
+  }
+}
