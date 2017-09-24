@@ -38,7 +38,7 @@ function getChirps() {
     }).then(function (chirps) {
         $chirpList.empty();
         for (var i = 0; i < chirps.length; i++) {
-            var $chirpDiv = $('<div class= "chirp-div"></div>');
+            var $chirpDiv = $('<div class="chirp-div"></div>');
             var $message = $('<p></p>');
             var $user = $('<h4></h4>');
             var $timestamp = $('<h5></h5>');
@@ -46,11 +46,11 @@ function getChirps() {
             $message.text(chirps[i].message);
             $user.text(chirps[i].user);
             $timestamp.text(new Date(chirps[i].timestamp).toLocaleString());
-            $message.append($chirpDiv);
-            $user.append($chirpDiv);
-            $timestamp.append($chirpDiv);
+            $message.appendTo($chirpDiv);
+            $user.appendTo($chirpDiv);
+            $timestamp.appendTo($chirpDiv);
 
-            $chirpDiv.append($chirpList);
+            $chirpDiv.appendTo($chirpList);
 
 
         }
