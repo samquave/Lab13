@@ -10,9 +10,9 @@ var server = http.createServer(function (req, res) {
     var urlData = url.parse(req.url, true);
 
     if (urlData.pathname === '/' && req.method === 'GET') {
-        res.writeHead(200, { 'Content-Type': 'text.html' });
+        res.writeHead(200, { 'Content-Type': 'text/html' });
         fs.createReadStream(path.join(clientPath, 'index.html')).pipe(res);
-    } else if (urlData.pathname === '/api/chirps"') {
+    } else if (urlData.pathname === '/api/chirps') {
         switch (req.method) {
             case 'GET':
                 res.writeHead(200, { 'Content-Type': 'application/json' });
@@ -35,7 +35,7 @@ var server = http.createServer(function (req, res) {
                             chirps.push(newChirp);
 
                             var chirpsJSONData = JSON.stringify(chirps);
-                            fs.writeFile(dataPath, shirpsJSONData, function (err) {
+                            fs.writeFile(dataPath, chirpsJSONData, function (err) {
                                 if (err) {
                                     console.log(err);
                                     res.writeHead(500, { 'Content-Type': 'text/plain' });
@@ -56,7 +56,7 @@ var server = http.createServer(function (req, res) {
     } else if (req.method === 'GET') {
         var fileExtension = path.extname(urlData.pathname);
         var conteneType;
-        switch (fileExtnesion) {
+        switch (fileExtension) {
             case '.html':
                 contentType = 'text/html';
                 break;
